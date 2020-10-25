@@ -61,6 +61,10 @@ router.post('/', (req, res) => {
       res.status(500).json(err);
     });
 });
+// PUT /api/posts/upvote
+router.put('/upvote', (req, res) => {
+
+});
 
 router.put('/:id', (req, res) => {
   Post.update(
@@ -73,6 +77,12 @@ router.put('/:id', (req, res) => {
       }
     }
   )
+
+  Vote.create({
+    user_id: req.body.user_id,
+    post_id: req.body.post_id
+  })
+    
     .then(dbPostData => {
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
