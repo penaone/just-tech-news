@@ -31,7 +31,7 @@ Vote.init(
 },
 
   {
-    sequelize_,
+    sequelize,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
