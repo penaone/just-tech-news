@@ -1,5 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const sequelize_ = require('../config/connection');
 
 class Vote extends Model {}
 
@@ -31,7 +31,7 @@ Vote.init(
 },
 
   {
-    sequelize,
+    sequelize_,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
