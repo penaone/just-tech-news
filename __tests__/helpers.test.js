@@ -1,4 +1,6 @@
 const {format_date} = require('../utils/helpers');
+const {format_plural} = require('../utils/helpers');
+const {format_url} = require('../utils/helpers');
 
 test('format_url() returns a simplified url string', () => {
   const url1 = format_url('http://test.com/page/1');
@@ -12,7 +14,7 @@ test('format_url() returns a simplified url string', () => {
 test('format_plural() returns a pluralized word', () => {
   const word1 = format_plural('tiger', 1);
   const word2 = format_plural('lion', 2);
-  
+
   expect(word1).toBe('tiger');
   expect(word2).toBe('lions');
 });
